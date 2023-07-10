@@ -1,4 +1,5 @@
 target/
 *.class
-resources/imgs/
+resources/data/
 .DS_Store
+.idea/

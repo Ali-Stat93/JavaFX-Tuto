@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!-- ************************************************************************ -->
+    <!-- Global Project Info -->
+    <!-- ************************************************************************ -->
+
+    <!-- ************************************ -->
+    <!-- Parent Info -->
+    <!-- ************************************ -->
+    <parent>
+     <artifactId>JavaFxTuto1</artifactId>
+     <groupId>com.tuto.javafx</groupId>
+     <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <!-- ************************************ -->
+    <!-- Maven Info -->
+    <!-- ************************************ -->
+    <groupId>com.tuto.javafx</groupId>
+    <artifactId>javafx-gui</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <!-- ************************************ -->
+    <!-- General Information -->
+    <!-- ************************************ -->
+    <name>JavaFX GUI</name>
+
+    <!-- ************************************ -->
+    <!-- Dependencies -->
+    <!-- ************************************ -->
+    <dependencies>
+        <dependency>
+            <groupId>com.tuto.javafx</groupId>
+            <artifactId>javafx-model</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.tuto.javafx</groupId>
+            <artifactId>javafx-business</artifactId>
+        </dependency>
+        <!-- Other dependencies -->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+        </dependency>
+    </dependencies>
+
+    <!-- ************************************ -->
+    <!-- Build -->
+    <!-- ************************************ -->
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>data/</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.3</version>
+                <configuration>
+                    <mainClass>com.tuto.javafx.gui.App</mainClass>
+                    <commandlineArgs>FR</commandlineArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifestFile>src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+                        <manifest>
+                            <mainClass>com.tuto.javafx.gui.App</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
