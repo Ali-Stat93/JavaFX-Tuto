@@ -1,0 +1,4 @@
+target/
+*.class
+resources/imgs/
+.DS_Store
